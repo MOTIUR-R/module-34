@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD SHOP</title>
+    <link rel="shortcut icon" href="https://www.bdshop.com/pub/media/default/default/BDSHOP-New-logo-2020-800x800.jpg"
+        type="image/x-icon">
+    <!-- gogle fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- daisy khala -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .fonts{
+            font-family: "poppins";
+        }
+    </style>
+</head> 
+
+<body class="fonts px-5">
+    <header class="mt-5">
+        <h2 class="text-center font-bold text-6xl text-green-500">BD Shop</h2>
+    </header>
+    <main class="container mx-auto mt-10">
+        <section class="text-center bg-gray-100 rounded-xl p-5 mb-8">
+            <h2 class="text-4xl font-semibold text-black mb-2">Search your phone</h2>
+            <input id="search-field" type="text" placeholder="Search..." class="input input-bordered w-full max-w-xs" />
+            <button onclick="handelSearch()" class="btn text-white bg-green-500"> Search </button>
+        </section>
+
+        
+        <section>
+            <!-- search result star -->
+            <div id="lodding-dot" class="hidden flex justify-center items-center my-48">
+                <span class="loading loading-dots loading-lg text-green-500"></span>
+            </div>
+            
+            <div id="phone-container" class="gap-x-10 gap-y-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <!-- <div class="card w-96 bg-gray-100 shadow-xl">
+                    <figure>
+                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div id="no-found-message" class="text-center  mt-16 hidden">
+                <h3 class="text-warning text-4xl font-semibold text-red-500">No Phone Found. Please try a new search</h3>
+            </div>
+
+            <!-- show all button -->
+            <div id="show-all-container" class="hidden text-center mt-4">
+                <button onclick="handelShowAll()" class="btn text-white bg-green-500">See More...</button>
+            </div>
+        </section>
+        <!-- show details modal -->
+        <div>
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="">open modal</button> -->
+            <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box ">
+                <h3 id="phone-name" class="font-bold text-2xl"></h3>
+                <div id="show-details-container">
+
+                </div>
+                <div class="modal-action">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn text-white bg-green-500">Close</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+        </div>
+    </main>
+    <!-- footer section start -->
+    <footer class="footer mt-10 p-10 bg-base-200 text-base-content">
+        <nav>
+          <h6 class="footer-title">Services</h6> 
+          <a class="link link-hover">Branding</a>
+          <a class="link link-hover">Design</a>
+          <a class="link link-hover">Marketing</a>
+          <a class="link link-hover">Advertisement</a>
+        </nav> 
+        <nav>
+          <h6 class="footer-title">Company</h6> 
+          <a class="link link-hover">About us</a>
+          <a class="link link-hover">Contact</a>
+          <a class="link link-hover">Jobs</a>
+          <a class="link link-hover">Press kit</a>
+        </nav> 
+        <nav>
+          <h6 class="footer-title">Legal</h6> 
+          <a class="link link-hover">Terms of use</a>
+          <a class="link link-hover">Privacy policy</a>
+          <a class="link link-hover">Cookie policy</a>
+        </nav> 
+        <form>
+          <h6 class="footer-title">Newsletter</h6> 
+          <fieldset class="form-control w-80">
+            <label class="label">
+              <span class="label-text">Enter your email address</span>
+            </label> 
+            <div class="join">
+              <input type="text" placeholder="username@gmail.com" class="input input-bordered join-item" /> 
+              <button class="btn  text-white bg-green-500 join-item">Subscribe</button>
+            </div>
+          </fieldset>
+        </form>
+      </footer>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
